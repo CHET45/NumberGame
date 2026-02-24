@@ -1,6 +1,5 @@
 package com.rtu.number.game.ui
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
@@ -11,11 +10,9 @@ fun NumberGameApp(
     navController: NavHostController,
 ) {
     Scaffold {
-        Box {
-            NGNavHost(
-                contentPadding = it,
-                navController = navController,
-            )
-        }
+        NGNavHost(
+            contentPadding = it,
+            navController = navController,
+        )
     }
 }
