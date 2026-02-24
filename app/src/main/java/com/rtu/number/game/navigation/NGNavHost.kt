@@ -5,14 +5,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import com.rtu.number.game.MainViewModel
 import com.rtu.number.game.navigation.destinations.HomeDestination
 import com.rtu.number.game.navigation.destinations.home
 
 @Composable
 fun NGNavHost(
     contentPadding: PaddingValues,
-    mainState: MainViewModel.MainState,
     navController: NavHostController,
 ) {
     NavHost(

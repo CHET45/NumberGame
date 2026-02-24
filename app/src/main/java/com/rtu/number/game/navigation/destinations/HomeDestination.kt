@@ -8,8 +8,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.rtu.number.game.screens.HomeScreen
-import com.rtu.number.game.MainViewModel
+import com.rtu.number.game.ui.screens.HomeScreen
+import com.rtu.number.game.vm.HomeViewModel
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -29,13 +29,14 @@ fun NavGraphBuilder.home(
 @Composable
 fun HomeScreenRoute(
     contentPadding: PaddingValues,
-    vm: MainViewModel = hiltViewModel(),
+    vm: HomeViewModel = hiltViewModel(),
 ) {
     val uiState by vm.mainState.collectAsStateWithLifecycle()
 
     HomeScreen(
         contentPadding = contentPadding,
         uiState = uiState,
+        onTestButtonClick = vm::onTestButtonClick,
     )
 
 }
